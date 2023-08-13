@@ -5,4 +5,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Shared\AddDeleteUsers.Shared.Abstractions\AddDeleteUsers.Shared.Abstractions.csproj" />
+    <ProjectReference Include="..\Shared\AddDeleteUsers.Shared\AddDeleteUsers.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
