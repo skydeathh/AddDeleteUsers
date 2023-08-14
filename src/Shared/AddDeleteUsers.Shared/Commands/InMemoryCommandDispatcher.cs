@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 
 namespace AddDeleteUsers.Shared.Commands {
-    public class InMemoryCommandDispatcher : ICommandDispatcher {
+    internal sealed class InMemoryCommandDispatcher : ICommandDispatcher {
         private readonly IServiceProvider _serviceProvider;
 
         public InMemoryCommandDispatcher(IServiceProvider serviceProvider)

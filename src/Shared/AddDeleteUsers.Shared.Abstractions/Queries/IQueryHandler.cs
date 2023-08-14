@@ -1,4 +1,5 @@
 ﻿namespace AddDeleteUsers.Shared.Abstractions.Queries;
-public interface ICommandHandler {
-    Task HandleAsync<TCommand>(TCommand command) where TCommand : class, IQuery;
+
+public interface IQueryHandler<in TQuery, TResult> where TQuery : class, IQuery<TResult> {
+    Task<TResult> HandleAsync(TQuery query);
 }
