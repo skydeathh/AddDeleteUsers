@@ -17,9 +17,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AddDeleteUsers.Application\AddDeleteUsers.Application.csproj" />
-    <ProjectReference Include="..\AddDeleteUsers.Domain\AddDeleteUsers.Domain.csproj" />
-    <ProjectReference Include="..\Shared\AddDeleteUsers.Shared.Abstractions\AddDeleteUsers.Shared.Abstractions.csproj" />
-    <ProjectReference Include="..\Shared\AddDeleteUsers.Shared\AddDeleteUsers.Shared.csproj" />
   </ItemGroup>
 
 </Project>

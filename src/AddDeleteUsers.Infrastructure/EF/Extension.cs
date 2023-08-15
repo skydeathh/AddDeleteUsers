@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using AddDeleteUsers.Shared.Options;
 
 namespace AddDeleteUsers.Infrastructure.EF;
+
 internal static class Extension {
     public static IServiceCollection AddPostgres(this IServiceCollection services, 
         IConfiguration configuration) {

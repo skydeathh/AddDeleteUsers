@@ -4,14 +4,14 @@ using AddDeleteUsers.Shared.Queries;
 using AddDeleteUsers.Infrastructure.EF;
 
 
-namespace AddDeleteUsers.Infrastructure {
-    public static class Extension {
-        public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration) {
+namespace AddDeleteUsers.Infrastructure;
 
-            services.AddPostgres(configuration);
-            services.AddQueries();
+public static class Extension {
+    public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration) {
 
-            return services;
-        }
+        services.AddPostgres(configuration);
+        services.AddQueries();
+
+        return services;
     }
 }

@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AddDeleteUsers.Infrastructure.EF.Configs;
+
 internal sealed class WriteConfiguration : IEntityTypeConfiguration<User> {
     public void Configure(EntityTypeBuilder<User> builder) {
         builder.HasKey(u => u.Id);
@@ -33,4 +34,3 @@ internal sealed class WriteConfiguration : IEntityTypeConfiguration<User> {
         builder.ToTable("Users");
     }
 }
-
