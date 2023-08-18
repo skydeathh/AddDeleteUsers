@@ -3,7 +3,6 @@ using Microsoft.Extensions.DependencyInjection;
 using AddDeleteUsers.Shared.Queries;
 using AddDeleteUsers.Infrastructure.EF;
 
-
 namespace AddDeleteUsers.Infrastructure;
 
 public static class Extension {

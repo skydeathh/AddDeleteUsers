@@ -17,4 +17,3 @@ internal sealed class InMemoryQueryDispatcher : IQueryDispatcher {
             .Invoke(handler, new[] { query })!;
     }
 }
-

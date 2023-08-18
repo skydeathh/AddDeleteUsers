@@ -15,6 +15,7 @@ internal static class Extension {
 
         services.AddScoped<IUsersRepository, PostgresAddDeleteUsersRepository>();
         var options = configuration.GetOptions<PostgresOptions>("Postgres");
+
         services.AddDbContext<ReadDbContext>(ctx
             => ctx.UseNpgsql(options.ConnectionString));
 

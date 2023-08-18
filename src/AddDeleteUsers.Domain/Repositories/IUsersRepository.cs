@@ -9,4 +9,3 @@ public interface IUsersRepository {
     Task UpdateAsync(User user);
     Task DeleteAsync(User user);
 }
-

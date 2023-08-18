@@ -19,4 +19,3 @@ internal sealed class RemoveUserHandler : ICommandHandler<RemoveUser> {
         await _repository.DeleteAsync(user);
     }
 }
-
