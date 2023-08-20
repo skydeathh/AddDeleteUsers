@@ -2,6 +2,7 @@
 using AddDeleteUsers.Domain.Repositories;
 using AddDeleteUsers.Shared.Abstractions.Commands;
 using AddDeleteUsers.Domain.Entities;
+using AddDeleteUsers.Domain.ValueObjects;
 
 namespace AddDeleteUsers.Application.Commands.Handlers;
 
@@ -14,11 +15,14 @@ internal sealed class AddUserHandler : ICommandHandler<AddUser> {
     public async Task HandleAsync(AddUser command) {
         var (id, name, surname, gender) = command;
 
-        var user = _repository.GetAsync(id);
-        if (user != null)
-            throw new UserAleadyExistsException();
+        // var user = _repository.GetAsync(id);
+        // if (user != null)
+        //     throw new UserAleadyExistsException();
 
-        var newUser = new User(id, name, surname, gender);
+        var newName = new UserName(name);
+        var newSurname = new UserSurname(surname);
+        
+        var newUser = new User(id, newName, newSurname, gender);
         await _repository.AddAsync(newUser);
     }
 }

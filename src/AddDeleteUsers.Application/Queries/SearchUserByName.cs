@@ -2,6 +2,6 @@
 
 namespace AddDeleteUsers.Application.Queries;
 
-public class SearchUserByName : IQuery<UserDto> {
+public class SearchUserByName : IQuery<IEnumerable<UserDto>> {
     public string Name { get; set; }
 }

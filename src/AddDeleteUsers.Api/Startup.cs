@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AddDeleteUsers.Application;
 using AddDeleteUsers.Infrastructure;
+using AddDeleteUsers.Shared;
 using AddDeleteUsers.Shared.Commands;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -26,13 +27,13 @@ namespace PackIT.Api {
         public IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services) {
-//            services.AddShared();
+            services.AddShared();
             services.AddApplication();
             services.AddInfrastructure(Configuration);
             services.AddControllers();
 
             services.AddSwaggerGen(c => {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "PackIT.Api", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "AddDeleteUsersApi", Version = "v1" });
             });
         }
 
@@ -40,7 +41,7 @@ namespace PackIT.Api {
             if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "PackIT.Api v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AddDeleteUsersApi v1"));
             }
 
             app.UseHttpsRedirection();

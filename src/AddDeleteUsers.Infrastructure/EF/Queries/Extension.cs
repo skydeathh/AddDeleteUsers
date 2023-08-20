@@ -1,4 +1,5 @@
-﻿using AddDeleteUsers.Infrastructure.EF.Models;
+﻿using AddDeleteUsers.Domain.Consts;
+using AddDeleteUsers.Infrastructure.EF.Models;
 
 namespace AddDeleteUsers.Infrastructure.EF.Queries {
     internal static class Extension {
@@ -7,7 +8,7 @@ namespace AddDeleteUsers.Infrastructure.EF.Queries {
                 Id = readModel.Id,
                 Name = readModel.Name,
                 Surname = readModel.Surname,
-                Gender = readModel.Gender
+                Gender = (Gender)Enum.Parse(typeof(Gender), readModel.Gender)
             };
     }
 }
