@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 namespace AddDeleteUsers.Infrastructure.EF.Contexts;
 
 internal sealed class ReadDbContext : DbContext {
-    public DbSet<UserReadModel> User { get; set; }
+    public DbSet<UserReadModel> Users { get; set; }
 
     public ReadDbContext(DbContextOptions<ReadDbContext> options) : base(options) { }
 

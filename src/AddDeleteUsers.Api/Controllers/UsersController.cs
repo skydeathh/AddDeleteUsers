@@ -3,11 +3,10 @@ using AddDeleteUsers.Application.Queries;
 using AddDeleteUsers.Shared.Abstractions.Commands;
 using AddDeleteUsers.Shared.Abstractions.Queries;
 using Microsoft.AspNetCore.Mvc;
+using AddDeleteUsers.Application.DTO;
 
 namespace AddDeleteUsers.Api.Controllers;
 
-[ApiController]
-[Route("api/[controller]")]
 public class UsersController : BaseController {
     private readonly IQueryDispatcher _queryDispatcher;
     private readonly ICommandDispatcher _commandDispatcher;
@@ -17,7 +16,7 @@ public class UsersController : BaseController {
         _commandDispatcher = commandDispatcher;
     }
 
-    [HttpGet("{id:guid}")]
+    [HttpGet("{Id:guid}")]
     public async Task<ActionResult<UserDto>> Get([FromRoute] GetUser query) {
         var result = await _queryDispatcher.QueryAsync(query);
 
@@ -31,13 +30,13 @@ public class UsersController : BaseController {
         return OkOrNotFound(result);
     }
 
-    [HttpPut("{id:guid}")]
+    [HttpPut("{Id:guid}")]
     public async Task<IActionResult> Put([FromBody] AddUser command) {
         await _commandDispatcher.DispatchAsync(command);
         return Ok();
     }
 
-    [HttpDelete("{id:guid}")]
+    [HttpDelete("{Id:guid}")]
     public async Task<IActionResult> Delete([FromBody] RemoveUser command) {
         await _commandDispatcher.DispatchAsync(command);
         return Ok();

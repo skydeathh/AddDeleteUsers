@@ -1,10 +1,6 @@
-﻿using System;
-using System.Data;
-using AddDeleteUsers.Domain.Consts;
-using AddDeleteUsers.Infrastructure.EF.Models;
+﻿using AddDeleteUsers.Infrastructure.EF.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-
 
 namespace AddDeleteUsers.Infrastructure.EF.Configs;
 

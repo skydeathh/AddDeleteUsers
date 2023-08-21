@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using AddDeleteUsers.Shared.Options;
+using AddDeleteUsers.Application.Services;
+using AddDeleteUsers.Infrastructure.EF.Services;
 
 namespace AddDeleteUsers.Infrastructure.EF;
 
@@ -14,6 +16,8 @@ internal static class Extension {
         IConfiguration configuration) {
 
         services.AddScoped<IUsersRepository, PostgresAddDeleteUsersRepository>();
+        services.AddScoped<IUsersReadServics, PostgresAddDeleteUsersReadService>();
+
         var options = configuration.GetOptions<PostgresOptions>("Postgres");
 
         services.AddDbContext<ReadDbContext>(ctx

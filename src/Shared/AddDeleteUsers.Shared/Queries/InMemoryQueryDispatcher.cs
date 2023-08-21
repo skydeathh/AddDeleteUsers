@@ -1,7 +1,7 @@
 ﻿using AddDeleteUsers.Shared.Abstractions.Queries;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace PackIT.Shared.Queries;
+namespace AddDeleteUsers.Shared.Queries;
 internal sealed class InMemoryQueryDispatcher : IQueryDispatcher {
     private readonly IServiceProvider _serviceProvider;
 
@@ -14,6 +14,6 @@ internal sealed class InMemoryQueryDispatcher : IQueryDispatcher {
         var handler = scope.ServiceProvider.GetRequiredService(handlerType);
 
         return await (Task<TResult>)handlerType.GetMethod(nameof(IQueryHandler<IQuery<TResult>, TResult>.HandleAsync))?
-            .Invoke(handler, new[] { query })!;
+            .Invoke(handler, new[] { query });
     }
 }

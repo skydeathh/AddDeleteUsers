@@ -1,13 +1,15 @@
 ﻿using AddDeleteUsers.Application.Queries;
 using AddDeleteUsers.Infrastructure.EF.Models;
+using AddDeleteUsers.Shared.Abstractions.Queries;
 using Microsoft.EntityFrameworkCore;
+using AddDeleteUsers.Application.DTO;
+using AddDeleteUsers.Infrastructure.EF.Contexts;
 
 namespace AddDeleteUsers.Infrastructure.EF.Queries.Handlers;
-internal class SearchUserByNameHandler {
+internal class SearchUserByNameHandler : IQueryHandler<SearchUserByName, IEnumerable<UserDto>> {
     private readonly DbSet<UserReadModel> _users;
-
-    public SearchUserByNameHandler(DbSet<UserReadModel> users)
-        => _users = users;
+    public SearchUserByNameHandler(ReadDbContext context)
+        => _users = context.Users;
 
     public async Task<IEnumerable<UserDto>> HandleAsync(SearchUserByName query) {
         var dbQuery = _users.AsQueryable();

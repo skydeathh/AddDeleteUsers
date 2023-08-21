@@ -1,6 +1,5 @@
 ﻿using AddDeleteUsers.Domain.Entities;
 using AddDeleteUsers.Infrastructure.EF.Configs;
-using AddDeleteUsers.Infrastructure.EF.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace AddDeleteUsers.Infrastructure.EF.Contexts;

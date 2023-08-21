@@ -1,4 +1,4 @@
 ﻿namespace AddDeleteUsers.Application.Services;
-    public interface IUserReadServics {
+    public interface IUsersReadServics {
     Task<bool> IsExist(Guid id);
 }

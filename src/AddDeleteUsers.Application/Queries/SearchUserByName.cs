@@ -1,4 +1,5 @@
 ﻿using AddDeleteUsers.Shared.Abstractions.Queries;
+using AddDeleteUsers.Application.DTO;
 
 namespace AddDeleteUsers.Application.Queries;
 
