@@ -1,8 +1,12 @@
 # AddDeleteUsers API
 
-This API provides functionality to manage users by performing operations such as adding, deleting, and finding users by name. It supports the following requests:
+This API provides functionality to manage users by performing operations such as adding, deleting, and finding users by name.
+
+**Technology stack: API, ASP.NET, CQRS, EF CORE, DDD, MVC.**
 
 ![Preview](./materials/images/Preview.png)
+
+It supports the following requests:
 
 ## 1. Get User
 
@@ -98,7 +102,7 @@ Deletes a specific user based on their unique `Id`.
 
 ### Response
 
-- Status Code: 200 (OK)
+- Status Code: 200 (OK).
 
 ### Example
 
